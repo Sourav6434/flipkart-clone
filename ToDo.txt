@@ -1,0 +1,20 @@
+MyProfile Component: 
+1. After changing gender i'ts not navigateing to MyProfile component, instead it is redirecting to EditProfile component 
+
+EditProfile Compoent:
+1. Deactivate Acccount feature
+
+ManageAddress Component: 
+1. Modal Backround Height
+2. Triple Dot menu not closing after clicking on outside 
+
+NavBar Component: 
+1. Search suggestion not closing after clicking on outside 
+
+Cart Component: 
+1. Shipping adddres component moving upwards 
+
+
+Place Order Component: 
+1. Do the frontend desing and the UI part
+2. Do the backend part also 

@@ -1,0 +1,221 @@
+[{
+  "_id": {
+    "$oid": "65e9af54fb6cd8657cc1be2a"
+  },
+  "OfferTitle": "Spring Sale",
+  "OfferDescription": "Enjoy 20% off on all products to celebrate the arrival of spring.",
+  "Discount": 20,
+  "StartDate": "March 20, 2024",
+  "EndDate": "April 10, 2024",
+  "Availability": "All customers",
+  "RedemptionMethod": "Online and in-store",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9af8e3d26c5e918a8eac4"
+  },
+  "OfferTitle": "New Customer Discount",
+  "OfferDescription": "New customers receive $10 off their first purchase.",
+  "Discount": 10,
+  "StartDate": "Ongoing",
+  "EndDate": "No expiration",
+  "Availability": "New customers only",
+  "RedemptionMethod": "Online and in-store",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9af8e3d26c5e918a8eac3"
+  },
+  "OfferTitle": "Weekend Special",
+  "OfferDescription": "Get 15% off on all weekend orders.",
+  "Discount": 15,
+  "StartDate": "Every Friday",
+  "EndDate": "Every Sunday",
+  "Availability": "All customers",
+  "RedemptionMethod": "Online orders only",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9af8e3d26c5e918a8eac2"
+  },
+  "OfferTitle": "Buy One, Get One Free",
+  "OfferDescription": "Purchase any product and get another product of equal or lesser value for free.",
+  "Discount": 100,
+  "StartDate": "Ongoing",
+  "EndDate": "No expiration",
+  "Availability": "All customers",
+  "RedemptionMethod": "In-store only",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9af8e3d26c5e918a8eac8"
+  },
+  "OfferTitle": "Flash Sale",
+  "OfferDescription": "Limited-time offer! Enjoy 25% off on select items for the next 24 hours.",
+  "Discount": 25,
+  "StartDate": "Ongoing (announced with each flash sale)",
+  "EndDate": "24 hours after start time",
+  "Availability": "All customers",
+  "RedemptionMethod": "Online only",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9af8e3d26c5e918a8eac9"
+  },
+  "OfferTitle": "Back-to-School Special",
+  "OfferDescription": "Students and teachers receive 15% off on school supplies and electronics.",
+  "Discount": 15,
+  "StartDate": "August 1, 2024",
+  "EndDate": "August 31, 2024",
+  "Availability": "Students and teachers with valid ID",
+  "RedemptionMethod": "In-store only",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9af8e3d26c5e918a8eaca"
+  },
+  "OfferTitle": "Member Exclusive Discount",
+  "OfferDescription": "Members of our loyalty program enjoy an extra 10% off on all purchases.",
+  "Discount": 10,
+  "StartDate": "Ongoing",
+  "EndDate": "No expiration",
+  "Availability": "Loyalty program members",
+  "RedemptionMethod": "Online and in-store",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9af8e3d26c5e918a8eac6"
+  },
+  "OfferTitle": "Refer a Friend",
+  "OfferDescription": "Refer a friend and both receive 20% off on your next purchase.",
+  "Discount": 20,
+  "StartDate": "Ongoing",
+  "EndDate": "No expiration",
+  "Availability": "All customers",
+  "RedemptionMethod": "Online and in-store",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9af8e3d26c5e918a8eac7"
+  },
+  "OfferTitle": "Holiday Gift Card Bonus",
+  "OfferDescription": "Purchase a gift card worth $50 or more and receive a $10 bonus gift card.",
+  "Discount": 10,
+  "StartDate": "November 1, 2024",
+  "EndDate": "December 24, 2024",
+  "Availability": "All customers",
+  "RedemptionMethod": "In-store only",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9afdc3d26c5e918a8ead3"
+  },
+  "OfferTitle": "Buy One, Get One Free",
+  "OfferDescription": "Purchase any product and get another product of equal or lesser value for free.",
+  "Discount": 100,
+  "StartDate": "Ongoing",
+  "EndDate": "No expiration",
+  "Availability": "All customers",
+  "RedemptionMethod": "In-store only",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9b0133d26c5e918a8ead5"
+  },
+  "OfferTitle": "Weekend Special",
+  "OfferDescription": "Get 15% off on all weekend orders.",
+  "Discount": 15,
+  "StartDate": "Every Friday",
+  "EndDate": "Every Sunday",
+  "Availability": "All customers",
+  "RedemptionMethod": "Online orders only",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9b0133d26c5e918a8ead9"
+  },
+  "OfferTitle": "Holiday Gift Card Bonus",
+  "OfferDescription": "Purchase a gift card worth $50 or more and receive a $10 bonus gift card.",
+  "Discount": 10,
+  "StartDate": "November 1, 2024",
+  "EndDate": "December 24, 2024",
+  "Availability": "All customers",
+  "RedemptionMethod": "In-store only",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9b0133d26c5e918a8ead8"
+  },
+  "OfferTitle": "Refer a Friend",
+  "OfferDescription": "Refer a friend and both receive 20% off on your next purchase.",
+  "Discount": 20,
+  "StartDate": "Ongoing",
+  "EndDate": "No expiration",
+  "Availability": "All customers",
+  "RedemptionMethod": "Online and in-store",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9b0133d26c5e918a8ead6"
+  },
+  "OfferTitle": "New Customer Discount",
+  "OfferDescription": "New customers receive $10 off their first purchase.",
+  "Discount": 10,
+  "StartDate": "Ongoing",
+  "EndDate": "No expiration",
+  "Availability": "New customers only",
+  "RedemptionMethod": "Online and in-store",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9b0133d26c5e918a8eada"
+  },
+  "OfferTitle": "Flash Sale",
+  "OfferDescription": "Limited-time offer! Enjoy 25% off on select items for the next 24 hours.",
+  "Discount": 25,
+  "StartDate": "Ongoing (announced with each flash sale)",
+  "EndDate": "24 hours after start time",
+  "Availability": "All customers",
+  "RedemptionMethod": "Online only",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9b0133d26c5e918a8eadb"
+  },
+  "OfferTitle": "Back-to-School Special",
+  "OfferDescription": "Students and teachers receive 15% off on school supplies and electronics.",
+  "Discount": 15,
+  "StartDate": "August 1, 2024",
+  "EndDate": "August 31, 2024",
+  "Availability": "Students and teachers with valid ID",
+  "RedemptionMethod": "In-store only",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e9b0133d26c5e918a8eadc"
+  },
+  "OfferTitle": "Member Exclusive Discount",
+  "OfferDescription": "Members of our loyalty program enjoy an extra 10% off on all purchases.",
+  "Discount": 10,
+  "StartDate": "Ongoing",
+  "EndDate": "No expiration",
+  "Availability": "Loyalty program members",
+  "RedemptionMethod": "Online and in-store",
+  "__v": 0
+}]

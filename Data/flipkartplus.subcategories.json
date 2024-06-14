@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "66276d4cecdeec2d0bab07cb"
+  },
+  "name": "home-decoration",
+  "createdAt": {
+    "$date": "2024-04-23T08:11:56.270Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-23T08:11:56.270Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66276f761be4aa42487fa596"
+  },
+  "name": "laptops",
+  "createdAt": {
+    "$date": "2024-04-23T08:21:10.775Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-23T08:21:10.775Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66276f761be4aa42487fa597"
+  },
+  "name": "smartphones",
+  "createdAt": {
+    "$date": "2024-04-23T08:21:10.776Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-23T08:21:10.776Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66276f761be4aa42487fa598"
+  },
+  "name": "fragrances",
+  "createdAt": {
+    "$date": "2024-04-23T08:21:10.776Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-23T08:21:10.776Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66276f761be4aa42487fa59b"
+  },
+  "name": "skincare",
+  "createdAt": {
+    "$date": "2024-04-23T08:21:10.776Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-23T08:21:10.776Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66276f761be4aa42487fa59a"
+  },
+  "name": "groceries",
+  "createdAt": {
+    "$date": "2024-04-23T08:21:10.776Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-23T08:21:10.776Z"
+  },
+  "__v": 0
+}]

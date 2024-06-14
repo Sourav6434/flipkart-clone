@@ -1,0 +1,47 @@
+.address-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  height: 1111px;
+}
+
+.address-container {
+  position: relative;
+  top: 0;
+  left: 35%;
+  right: 0%;
+  bottom: 0;
+  margin-top: 5%;
+  background-color: aliceblue;
+  padding: 2%;
+  width: 30%;
+}
+
+.address-form {
+  padding: 2%;
+}
+
+.form-label {
+  margin-bottom: 6%;
+  font-weight: bold;
+  cursor: default;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 10px 0px;
+}
+
+.type {
+  width: 3%;
+  margin-left: 10%;
+}

@@ -1,0 +1,229 @@
+.m-profile {
+  margin: 80px 50px 50px 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.m-profile-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 25%;
+  height: 100%;
+}
+
+.m-profile-head {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  box-shadow: 2px 3px 5px #98989812;
+  width: auto;
+  height: 80px;
+}
+.m-profile-action {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  /* box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.229); */
+  border-bottom: 1px solid #c6c2c247;
+  background-color: white;
+  box-shadow: 2px 3px 5px #98989812;
+}
+
+.m-profile-image {
+  padding: 5px;
+}
+.m-profile-image img {
+  height: 80%;
+  margin: 7px;
+}
+.m-profile-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.m-profile-name p:nth-child(1) {
+  margin: unset;
+}
+.m-profile-name p:nth-child(2) {
+  margin: unset;
+  font-weight: 600;
+}
+
+.m-profile-action-myorders {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 12px 0px;
+  border-bottom: 1px solid #c6c2c247;
+}
+.m-profile-action-myorders p {
+  display: flex;
+  gap: 5px;
+  font-weight: 600;
+  color: #605f5f91;
+}
+.m-profile-action-myorders p a {
+  color: black;
+}
+.m-profile-action-myorders p a:hover {
+  color: blue;
+}
+.m-profile-action-myorders p i {
+  margin-top: 2px;
+  color: #59a4c3f0;
+}
+.m-profile-action-myorders i {
+  display: flex;
+  align-items: center;
+  color: #605f5f91;
+}
+
+.m-profile-action-setting {
+  padding: 0px 12px 0px;
+  border-bottom: 1px solid #c6c2c247;
+}
+.m-profile-action-setting p:nth-child(1) {
+  display: flex;
+  gap: 5px;
+  font-weight: 600;
+  color: #605f5f91;
+  margin-bottom: 6px;
+}
+
+.m-profile-action-setting p:nth-child(1) i {
+  margin-top: 3px;
+  color: #59a4c3f0;
+}
+
+.m-profile-action-setting-div {
+  width: auto;
+  height: 60%;
+  padding-left: 20px;
+}
+.m-profile-action-setting-div p:nth-child(1) {
+  margin: unset;
+  margin: 10px;
+  color: black;
+  font-weight: 400;
+}
+.m-profile-action-setting-div p:nth-child(1) a {
+  color: black;
+}
+.m-profile-action-setting-div p:nth-child(2) {
+  margin: unset;
+  margin: 10px;
+  color: black;
+  font-weight: 400;
+}
+.m-profile-action-setting-div p:nth-child(2) a {
+  color: black;
+}
+
+.m-profile-action-setting-div p:nth-child(1) a:hover {
+  color: blue;
+}
+.m-profile-action-setting-div p:nth-child(2) a:hover {
+  color: blue;
+}
+
+.m-profile-action-setting-payment {
+  padding: 0px 12px 0px;
+}
+.m-profile-action-setting-payment p {
+  display: flex;
+  gap: 5px;
+  font-weight: 600;
+  color: black;
+}
+.m-profile-action-setting-payment p:hover {
+  color: blue;
+}
+
+.m-profile-action-setting-payment p i {
+  margin-top: 3px;
+  color: #59a4c3f0;
+}
+
+.m-profile-view {
+  padding: 15px;
+  box-shadow: 2px 3px 5px #98989812;
+  width: 75%;
+  height: 100%;
+  background-color: white;
+}
+.m-profile-view p {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.m-profile-view input {
+  width: 40%;
+}
+
+.m-profile-view-name {
+  display: flex;
+}
+.m-profile-view-name div:nth-child(1) {
+  width: 70%;
+}
+.m-profile-view-name div:nth-child(2) {
+  width: 30%;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  height: 35px;
+}
+.m-profile-view-name div:nth-child(2) button {
+  background-color: #759ed7b8;
+}
+.m-profile-view-name div:nth-child(2) button:hover {
+  background-color: #88c5df;
+}
+
+.m-profile-view-gender {
+  display: flex;
+  margin-top: 15px;
+}
+.m-profile-view-gender input {
+  width: 2%;
+}
+.m-profile-view-gender label {
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.m-profile-view-contact div {
+  display: flex;
+  gap: 35px;
+}
+
+.m-profile-view-contact {
+  margin-top: 20px;
+}
+.m-profile-view-contact input:nth-child(2) {
+  width: 20%;
+}
+
+.faq {
+  margin-top: 30px;
+  margin-bottom: 8px;
+}
+.faq p1 {
+  font-weight: 500;
+  margin: 3px 0px 1px 0px;
+}
+.faq p {
+  margin: 5px 0px 15px 0px;
+  font-weight: 400;
+}
+.faq h3 {
+  margin-bottom: 6px;
+}
+
+.deactivate p {
+  color: rgba(0, 55, 255, 0.642);
+}
+.deactivate p:hover {
+  color: rgba(0, 55, 255, 0.929);
+}

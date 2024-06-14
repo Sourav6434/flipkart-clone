@@ -1,0 +1,31 @@
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  width: 99%;
+  height: 500px;
+  height: 708px;
+}
+
+.pnfImg {
+  width: 50%;
+  height: 50%;
+}
+
+.pnftext {
+  margin-top: 15px;
+  font-weight: 450;
+}
+
+.hidesrc {
+  display: none;
+}
+.hidden {
+  display: none;
+}
+
+.pnflogo {
+  justify-content: center;
+  width: -webkit-fill-available;
+}

@@ -1,0 +1,48 @@
+.alert-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  height: 1111px;
+}
+
+.alert-modal {
+  position: absolute;
+  top: 13%;
+  left: 35%;
+  right: 0%;
+  bottom: 0;
+  margin-top: 5%;
+  padding: 2%;
+  width: 30%;
+  height: 9%;
+  background-color: white;
+  color: black;
+}
+
+.alert-button {
+  display: flex;
+  justify-content: end;
+  gap: 9px;
+}
+
+.alert-message p:nth-child(1) {
+  margin: unset;
+  font-weight: 600;
+  font-size: larger;
+}
+.alert-message p:nth-child(2) {
+  color: #424242c2;
+}
+
+.alert-button button:nth-child(1) {
+  background-color: #88c5df;
+}
+.alert-button button:nth-child(2) {
+  background-color: white;
+  border: 1px #88c5df solid;
+  color: black;
+}

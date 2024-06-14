@@ -1,0 +1,89 @@
+.shipping-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  height: auto;
+}
+
+.shipping-address {
+  position: relative;
+  top: 13%;
+  left: 25%;
+  right: 0%;
+  bottom: 0;
+  margin-top: 5%;
+  padding: 2%;
+  width: 50%;
+  height: auto;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.shipping-address-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+.shipping-address-top p {
+  margin: unset;
+  font-size: larger;
+  font-weight: 500;
+}
+
+.s-address {
+  width: auto;
+  height: auto;
+  display: flex;
+}
+
+.s-button {
+  width: 5%;
+  padding: 1%;
+  padding-top: 2%;
+}
+.s-details {
+  width: 90%;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.s-header {
+  display: flex;
+  gap: 10px;
+}
+
+.s-header-name {
+  width: auto;
+}
+.s-header-name p {
+  margin: unset;
+  font-weight: 500;
+  font-size: large;
+}
+
+.s-header-type {
+  width: auto;
+}
+.s-header-type p {
+  margin: unset;
+  margin-top: 10%;
+  font-size: x-small;
+  background-color: #c7c7c778;
+  border-radius: 2px;
+  padding: 4.5% 10% 5.5% 0%;
+  color: #919090f0;
+  font-weight: 400;
+}
+
+.s-data {
+}
+.s-data p {
+  margin: unset;
+}

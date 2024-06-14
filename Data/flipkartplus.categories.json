@@ -1,0 +1,157 @@
+[
+{
+  "_id": {
+    "$oid": "661f9ee2445d8b37855fd0d8"
+  },
+  "id": 2,
+  "name": "Grocery",
+  "image": "/Grocery.png",
+  "subcategory": [
+    "groceries"
+  ],
+  "createdAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "661f9ee2445d8b37855fd0d9"
+  },
+  "id": 3,
+  "name": "Beauty & Fashion",
+  "image": "/Beauty.png",
+  "subcategory": [
+    "skin care",
+    "fragances"
+  ],
+  "createdAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "661f9ee2445d8b37855fd0da"
+  },
+  "id": 4,
+  "name": "Laptops",
+  "image": "/Laptops.png",
+  "subcategory": [
+    "laptop"
+  ],
+  "createdAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "661f9ee2445d8b37855fd0db"
+  },
+  "id": 5,
+  "name": "Home Decoration",
+  "image": "/HomeDeco.png",
+  "subcategory": [
+    "home-decoration"
+  ],
+  "createdAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "661f9ee2445d8b37855fd0dc"
+  },
+  "id": 6,
+  "name": "Toy & Baby Product",
+  "image": "/Toy.png",
+  "subcategory": [],
+  "createdAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "661f9ee2445d8b37855fd0dd"
+  },
+  "id": 7,
+  "name": "Home Appliences",
+  "image": "/Appliences.png",
+  "subcategory": [],
+  "createdAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "661f9ee2445d8b37855fd0de"
+  },
+  "id": 8,
+  "name": "Travel",
+  "image": "/Travel.png",
+  "subcategory": [],
+  "createdAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "661f9ee2445d8b37855fd0df"
+  },
+  "id": 9,
+  "name": "Two Wheeler",
+  "image": "/Vehicle.png",
+  "subcategory": [],
+  "createdAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "661f9ee2445d8b37855fd0d7"
+  },
+  "id": 1,
+  "name": "Mobiles",
+  "image": "/Mobiles.png",
+  "subcategory": [
+    "smartphone"
+  ],
+  "createdAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "updatedAt": {
+    "$date": "2024-04-17T10:05:22.476Z"
+  },
+  "__v": 0
+}
+]

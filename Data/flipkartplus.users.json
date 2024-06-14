@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "661cdfb652f6c1c3db4baaae"
+  },
+  "email": "sourav-ranjan.mallick@capgemini.com",
+  "password": "$2a$10$JylnwbeGWH0/q6Z08nIcfO86AbDjcSMhrRMoapcypbq5yEIBarM62",
+  "name": "Rinku",
+  "gender": "male",
+  "wishlist": [
+    null,
+    "6628aa1618f1c7d3f76186e5",
+    "6628aa1618f1c7d3f76186f7"
+  ],
+  "__v": 74,
+  "cart": [
+    {
+      "product": "6628aa1618f1c7d3f76186ed",
+      "quantity": 5,
+      "_id": {
+        "$oid": "66446d639bc33fff4fc3a33b"
+      }
+    },
+    {
+      "product": "6628aa1618f1c7d3f76186f5",
+      "quantity": 1,
+      "_id": {
+        "$oid": "66446e0b9bc33fff4fc3a41f"
+      }
+    },
+    {
+      "product": "6628aa1618f1c7d3f76186eb",
+      "quantity": 1,
+      "_id": {
+        "$oid": "6645d9120c43ad38771d63ab"
+      }
+    },
+    {
+      "product": "6628aa1618f1c7d3f76186e9",
+      "quantity": 1,
+      "_id": {
+        "$oid": "6645d9160c43ad38771d63b1"
+      }
+    }
+  ],
+  "order": []
+},
+{
+  "_id": {
+    "$oid": "662b43621d976d080f9d9076"
+  },
+  "email": "preetipr760@gmail.com",
+  "password": "$2a$10$HYtqi1ptNcwCHnQaBLHveOfMmNPo3F81EtFWVqNv//5Mc0PAH6.Nu",
+  "name": "Preeti",
+  "gender": "female",
+  "wishlist": [],
+  "cart": [],
+  "order": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663cada71f0263eb61ed5b9a"
+  },
+  "email": "aditi@gmail.com",
+  "password": "$2a$10$TiE6KFRY3tWuAwohs9rdIOS34rX/Hzcu5tGu4vgShssDhmtQkz6ji",
+  "name": "Aditi Pritam",
+  "gender": "female",
+  "wishlist": [],
+  "cart": [],
+  "order": [],
+  "__v": 0
+}]
