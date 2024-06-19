@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 
 const AddEditAddress = ({ closeAddress, handleSubmit, title, initialData }) => {
   const [formData, setFormData] = useState(initialData || {});
-  console.log(initialData);
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };

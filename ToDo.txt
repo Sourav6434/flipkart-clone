@@ -18,3 +18,10 @@ Cart Component:
 Place Order Component: 
 1. Do the frontend desing and the UI part
 2. Do the backend part also 
+
+
+
+
+//
+1. handle comoponents when token is not there 
+2. 

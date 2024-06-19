@@ -95,8 +95,6 @@ exports.getProductSearchAny = async (req, res) => {
     });
 };
 
-
-
 exports.getProduct = async (req, res) => {
   // Products.find()
   const { q } = req.query;
@@ -118,7 +116,6 @@ exports.getProduct = async (req, res) => {
 exports.getProductByCategories = async (req, res) => {
   // Products.find()
   const { q } = req.query;
-
 
   Products.find({ category: { $in: q } })
     .then((data) => {
@@ -208,7 +205,6 @@ exports.getProductByWishlist = async (req, res) => {
   const userId = req.params.wishlist;
   const { q } = req.query;
 
-
   try {
     const user = await userModel.findById(userId);
 
@@ -274,12 +270,12 @@ exports.getAllCategory = async (req, res) => {
     });
 };
 
-
-
 exports.createSubCategory = async (req, res) => {
   const NewSubCategory = req.body;
   if (NewSubCategory != null) {
-    const oldSubCategory = await SubCategories.findOne({ name: NewSubCategory.name });
+    const oldSubCategory = await SubCategories.findOne({
+      name: NewSubCategory.name,
+    });
 
     if (oldSubCategory) {
       return res.status(400).send("Sub Category Already exist");

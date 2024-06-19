@@ -5,24 +5,62 @@ const userModel = require("../models/userModel");
 exports.createAddress = async (req, res) => {
   try {
     const { userId } = req.params;
-    const addressData = req.body;
+    const {
+      name,
+      phone,
+      house,
+      city,
+      state,
+      landmark,
+      pincode,
+      type,
+      isDeliveryAddress,
+    } = req.body;
 
     let user = await userModel.findById(userId);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    let userAddress = await Address.findOne({ userId: userId });
-
-    if (!userAddress) {
-      userAddress = new Address({ userId });
+    // Check if address data is provided
+    if (
+      !name ||
+      !phone ||
+      !house ||
+      !city ||
+      !state ||
+      !landmark ||
+      !pincode ||
+      !type
+    ) {
+      return res
+        .status(400)
+        .json({ message: "All address fields are required" });
     }
 
-    userAddress.address.push(addressData);
+    let userAddressData = await Address.findOne({
+      userId: userId,
+    });
 
-    await userAddress.save();
+    if (!userAddressData) {
+      userAddressData = new Address({ userId });
+    }
 
-    res.status(201).json(userAddress);
+    userAddressData.addresses.push({
+      name,
+      phone,
+      house,
+      city,
+      state,
+      landmark,
+      pincode,
+      type,
+      isDeliveryAddress,
+    });
+
+    await userAddressData.save();
+
+    res.status(201).json(userAddressData);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -38,13 +76,15 @@ exports.getAllAddresses = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const userAddress = await Address.findOne({ userId });
+    const userAddresses = await Address.findOne({ userId });
 
-    if (!userAddress) {
-      return res.status(404).json({ message: "User not found" });
+    if (!userAddresses || userAddresses.length === 0) {
+      return res
+        .status(404)
+        .json({ message: "Addresses not found for this user" });
     }
 
-    res.status(200).json(userAddress);
+    res.status(200).json(userAddresses);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -60,16 +100,21 @@ exports.getAddressById = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const userAddress = await Address.findOne({ userId });
+    const userAddresses = await Address.findOne({ userId });
 
-    if (!userAddress) {
-      return res.status(404).json({ message: "User not found" });
+    if (!userAddresses || userAddresses.length === 0) {
+      return res
+        .status(404)
+        .json({ message: "Addresses not found for this User" });
     }
 
-    const address = userAddress.address.id(addressId);
+    // Find the specific address by addressId
+    const address = userAddresses.addresses.find(
+      (addr) => addr._id.toString() === addressId
+    );
 
     if (!address) {
-      return res.status(404).json({ message: "Address not found" });
+      return res.status(404).json({ message: "This Address not found" });
     }
 
     res.status(200).json(address);
@@ -94,7 +139,8 @@ exports.updateAddress = async (req, res) => {
       return res.status(404).json({ message: "User not found in Address" });
     }
 
-    const address = userAddress.address.id(addressId);
+    //id() Method: Mongoose provides a convenient method called id() to retrieve a subdocument from an array by its _id.
+    const address = userAddress.addresses.id(addressId);
 
     if (!address) {
       return res.status(404).json({ message: "Address not found" });
@@ -126,7 +172,7 @@ exports.deleteAddress = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const index = userAddress.address.findIndex(
+    const index = userAddress.addresses.findIndex(
       (addr) => addr._id == addressId
     );
 
@@ -134,7 +180,7 @@ exports.deleteAddress = async (req, res) => {
       return res.status(404).json({ message: "Address not found" });
     }
 
-    userAddress.address.splice(index, 1);
+    userAddress.addresses.splice(index, 1);
     await userAddress.save();
 
     res.status(200).json({ message: "Address deleted successfully" });
@@ -143,60 +189,48 @@ exports.deleteAddress = async (req, res) => {
   }
 };
 
-//Controller for fetching delivery address
-exports.getDeliveryAddress = async (req, res) => {
-  try {
-    const { userId, deliveryAddressId } = req.params;
-
-    let user = await userModel.findById(userId);
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
-
-    const userAddress = await Address.findOne({ userId });
-
-    if (!userAddress) {
-      return res.status(404).json({ message: "User Address not found" });
-    }
-
-    const address = userAddress.address.find(
-      (addr) => addr._id.toString() === deliveryAddressId
-    );
-
-    res.status(200).json(address);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-};
-
 //update delivery address
 exports.updateDeliveryAddress = async (req, res) => {
   try {
     const { userId, addressId } = req.params;
 
-    let user = await userModel.findById(userId);
+    // Find the user
+    const user = await userModel.findById(userId);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
-    const userAddress = await Address.findOne({ userId });
 
+    // Find the user's addresses
+    const userAddress = await Address.findOne({ userId });
     if (!userAddress) {
       return res.status(404).json({ message: "User Address not found" });
     }
 
-    const address = userAddress.address.id(addressId);
-
-    if (!address) {
+    // Find the address to mark as delivery address
+    const addressToUpdate = userAddress.addresses.id(addressId);
+    if (!addressToUpdate) {
       return res.status(404).json({ message: "Address not found" });
+    }
+
+    // Reset isDeliveryAddress for the previous delivery address if any
+    const previousDeliveryAddress = userAddress.addresses.find(
+      (addr) => addr.isDeliveryAddress
+    );
+    if (previousDeliveryAddress) {
+      previousDeliveryAddress.isDeliveryAddress = false;
     }
 
     // Update the deliveryAddress field with the new addressId
     userAddress.deliveryAddress = addressId;
 
+    // Mark the selected address as the delivery address
+    addressToUpdate.isDeliveryAddress = true;
+
     // Save the updated userAddress
     await userAddress.save();
+
     res.status(200).json({ message: "Delivery Address updated successfully" });
   } catch (err) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ message: err.message });
   }
 };

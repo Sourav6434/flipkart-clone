@@ -26,7 +26,6 @@ exports.getAllCart = async (req, res) => {
         }
       })
     );
-    console.log("cart Details", cartDetails);
     res.status(200).json(cartDetails);
   } catch (err) {
     console.error(`Error in fetching cart data: ${err}`);

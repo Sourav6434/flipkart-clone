@@ -62,19 +62,13 @@ const Cart = () => {
       const response = await axios.get(
         `http://localhost:4000/api/address/${userId}`
       );
-      setAddresses(response.data.address);
-      fetchDeliveryAddresses(decodedToken.id, response.data.deliveryAddress);
-    } catch (err) {
-      console.error(`Error in fetching shipping address: ${err}`);
-    }
-  };
-  const fetchDeliveryAddresses = async (userId, addressId) => {
-    try {
-      const response = await axios.get(
-        `
-http://localhost:4000/api/address/0/${userId}/${addressId}`
+      setAddresses(response.data.addresses);
+      //set Delivery Address
+      const deliveryAddress = response.data.addresses.find(
+        (addr) => addr.isDeliveryAddress
       );
-      setDeliveryAddress(response.data);
+      console.log(deliveryAddress);
+      setDeliveryAddress(deliveryAddress);
     } catch (err) {
       console.error(`Error in fetching shipping address: ${err}`);
     }
@@ -313,7 +307,7 @@ http://localhost:4000/api/address/0/${userId}/${addressId}`
                       setChangeShippingAddress(true);
                     }}
                   >
-                    change
+                    {deliveryAddress ? "change" : "select"}
                   </NavLink>
                 </div>
               </div>
@@ -332,14 +326,16 @@ http://localhost:4000/api/address/0/${userId}/${addressId}`
                     </p>
                   </div>
                 ) : (
-                  <div>Select or change delivery address 😊</div>
+                  <div>Delivery address not selected</div>
                 )}
 
                 {changeShippingAddress && (
                   <ShippingAddress
                     setChangeShippingAddress={setChangeShippingAddress}
                     addresses={addresses}
-                    deliveryAddressId={deliveryAddress._id}
+                    deliveryAddressId={
+                      deliveryAddress ? deliveryAddress._id : null
+                    }
                     handleDeliveryAddressChange={handleDeliveryAddressChange}
                   />
                 )}

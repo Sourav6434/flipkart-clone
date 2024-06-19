@@ -3,10 +3,6 @@ const addressRouter = express.Router();
 
 const addressController = require("../controllers/addressController");
 
-addressRouter.get(
-  "/0/:userId/:deliveryAddressId",
-  addressController.getDeliveryAddress
-);
 addressRouter.get("/:userId", addressController.getAllAddresses);
 addressRouter.get("/:userId/:addressId", addressController.getAddressById);
 addressRouter.post("/:userId", addressController.createAddress);

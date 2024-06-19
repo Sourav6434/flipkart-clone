@@ -25,6 +25,7 @@ const Dashboard = () => {
         const response = await axios.get(
           "http://localhost:4000/api/product/getProduct?q=" + ""
         );
+        console.log(response.data);
         setLatestProduct(response.data);
       } catch (error) {
         console.error(`Error fetching Product Data: ${error}`);

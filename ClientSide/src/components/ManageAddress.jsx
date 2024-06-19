@@ -8,7 +8,7 @@ import DeleteAlert from "./DeleteAlert";
 
 const ManageAddress = () => {
   const [isAddress, setIsAddress] = useState(false);
-  const [address, setAddress] = useState([]);
+  const [addresses, setAddresses] = useState([]);
   const [userId, setUserId] = useState();
   const [editAddress, setEditAddress] = useState(null);
   const [openMenu, setOpenMenu] = useState(null);
@@ -31,9 +31,9 @@ const ManageAddress = () => {
         const response = await axios.get(
           `http://localhost:4000/api/address/${id}`
         );
-        setAddress(response.data.address);
+        setAddresses(response.data.addresses);
       } else {
-        setAddress(null);
+        setAddresses(null);
       }
     } catch (error) {
       console.error("Error fetching User Address:", error);
@@ -100,10 +100,10 @@ const ManageAddress = () => {
         />
       )}
       <div className="saved-address">
-        <p>{address && address.length} SAVED ADDRESSES</p>
+        <p>{addresses && addresses.length} SAVED ADDRESSES</p>
       </div>
-      {address && address.length > 0 ? (
-        address.map((data, index) => (
+      {addresses && addresses.length > 0 ? (
+        addresses.map((data, index) => (
           <div className="address" key={index}>
             <div className="address-head">
               <div>
