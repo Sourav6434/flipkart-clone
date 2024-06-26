@@ -3,7 +3,8 @@
   width: 98%;
   overflow-x: hidden;
   margin: auto;
-  margin-top: 80px;
+  /* margin-top: 80px; */
+  margin-top: 10px;
   margin-bottom: 50px;
 
 }

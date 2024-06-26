@@ -3,7 +3,8 @@
 
     margin-right: 550px ;
     margin-left: 550px ;
-    margin-top: 90px;
+    /* margin-top: 90px; */
+    margin-top: 10px;
     margin-bottom: 10px;
     padding: 20px;
     border: 2px solid #9fb8da;
@@ -86,7 +87,8 @@
   .signup-container {
     max-width: 400px;
     margin: auto;
-    margin-top: 90px;
+    /* margin-top: 90px; */
+    margin-top: 10px;
     padding: 20px;
     border: 2px solid #9fb8da;
     border-radius: 5px;
