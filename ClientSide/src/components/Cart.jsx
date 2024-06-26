@@ -67,7 +67,6 @@ const Cart = () => {
       const deliveryAddress = response.data.addresses.find(
         (addr) => addr.isDeliveryAddress
       );
-      console.log(deliveryAddress);
       setDeliveryAddress(deliveryAddress);
     } catch (err) {
       console.error(`Error in fetching shipping address: ${err}`);
@@ -147,7 +146,6 @@ const Cart = () => {
       console.error(err);
     }
   };
-
   return (
     <div className="cart">
       {cart.length <= 0 ? (
