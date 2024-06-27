@@ -77,84 +77,92 @@ const ProductList = () => {
     <>
       <div className="products">
         <CategoryList />
-        <div className="product-list">
-          <div className="product-filter"></div>
-          <div className="product-data">
-            {product.map((data, index) => (
-              <div className="product-card" key={index}>
-                <div className="product-image">
-                  <NavLink
-                    to={`/productDetails/${data._id}`}
-                    style={{ color: "black" }}
-                  >
-                    <img src={data.thumbnail} alt="Image 1" />
-                  </NavLink>
-                  {decodedToken && decodedToken.name ? (
-                    <i
-                      className="fas fa-thin fa-heart"
-                      title="Add to Wishlist"
-                      onClick={() => handleWishlist(data._id)}
-                    ></i>
-                  ) : (
-                    ""
-                  )}
-                </div>
-
-                <div className="product-details">
-                  <div></div>
-                  <div>
+        {product && product.length > 0 ? (
+          <div className="product-list">
+            <div className="product-filter"></div>
+            <div className="product-data">
+              {product.map((data, index) => (
+                <div className="product-card" key={index}>
+                  <div className="product-image">
                     <NavLink
                       to={`/productDetails/${data._id}`}
                       style={{ color: "black" }}
                     >
-                      {" "}
-                      <h2>{data.title}</h2>{" "}
+                      <img src={data.thumbnail} alt="Image 1" />
                     </NavLink>
-                    <button>
-                      {data.rating} <i class="fas fa-duotone fa-star"></i>{" "}
-                    </button>
-                    <li>Brand: {data.brand}</li>
-                    <li>Description: {data.description}</li>
-                    <li>Category: {data.category}</li>
+                    {decodedToken && decodedToken.name ? (
+                      <i
+                        className="fas fa-thin fa-heart"
+                        title="Add to Wishlist"
+                        onClick={() => handleWishlist(data._id)}
+                      ></i>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+
+                  <div className="product-details">
+                    <div></div>
+                    <div>
+                      <NavLink
+                        to={`/productDetails/${data._id}`}
+                        style={{ color: "black" }}
+                      >
+                        {" "}
+                        <h2>{data.title}</h2>{" "}
+                      </NavLink>
+                      <button>
+                        {data.rating} <i class="fas fa-duotone fa-star"></i>{" "}
+                      </button>
+                      <li>Brand: {data.brand}</li>
+                      <li>Description: {data.description}</li>
+                      <li>Category: {data.category}</li>
+                    </div>
+                  </div>
+
+                  <div className="product-price">
+                    <div className="product-price-details">
+                      {" "}
+                      <p>${data.price}</p>
+                      <span className="product-list-discount">
+                        <s>
+                          $
+                          {(
+                            (100 * data.price) /
+                            (100 - data.discountPercentage)
+                          ).toFixed(2)}
+                        </s>
+
+                        <p>
+                          <i class="fa-solid fa-arrow-down"></i>
+                          {data.discountPercentage}% off
+                        </p>
+                      </span>
+                      <p>save extra with offers</p>
+                      {data.stock < 10 ? <p>Only {+data.stock} left</p> : null}
+                    </div>
+
+                    <div className="product-price-action">
+                      <button onClick={() => handleOnClickAddToCart(data._id)}>
+                        Add to Cart
+                      </button>
+                      <button>
+                        <i class="fa fa-bolt" />
+                        Buy Now
+                      </button>
+                    </div>
                   </div>
                 </div>
-
-                <div className="product-price">
-                  <div className="product-price-details">
-                    {" "}
-                    <p>${data.price}</p>
-                    <span className="product-list-discount">
-                      <s>
-                        $
-                        {(
-                          (100 * data.price) /
-                          (100 - data.discountPercentage)
-                        ).toFixed(2)}
-                      </s>
-
-                      <p>
-                        <i class="fa-solid fa-arrow-down"></i>
-                        {data.discountPercentage}% off
-                      </p>
-                    </span>
-                    <p>save extra with offers</p>
-                    {data.stock < 10 ? <p>Only {+data.stock} left</p> : null}
-                  </div>
-
-                  <div className="product-price-action">
-                    <button onClick={() => handleOnClickAddToCart(data._id)}>
-                      Add to Cart
-                    </button>
-                    <button>
-                      <i class="fa fa-bolt" />
-                      Buy Now
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        ) : (
+          <img
+            src={process.env.PUBLIC_URL + "/comingsoon.png"}
+            alt="Product_Coming_soon_Image"
+            className="comingsoon"
+          />
+        )}
       </div>
     </>
   );

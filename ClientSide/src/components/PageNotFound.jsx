@@ -31,7 +31,7 @@ function PageNotFound() {
     <div className="page-not-found">
       <img
         className="pnfImg"
-        src={process.env.PUBLIC_URL + "PageNotFound.png"}
+        src={process.env.PUBLIC_URL + "/PageNotFound.png"}
         alt="pagenotfound"
       />
       <p className="pnftext">
