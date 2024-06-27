@@ -58,22 +58,23 @@ exports.updateProductById = async (req, res) => {
     .catch((err) => res.status(404).send((err) => "Item not found" + err));
 };
 
-exports.getProduct = async (req, res) => {
-  // Products.find()
-  const { q } = req.query;
-  Products.find({
-    $or: [
-      { category: { $regex: new RegExp(q, "i") } },
-      { title: { $regex: new RegExp(q, "i") } },
-    ],
-  })
-    .then((data) => {
-      res.status(200).json(data);
-    })
-    .catch((err) => {
-      res.status(400).send({ error: err });
-    });
-};
+// exports.getProduct = async (req, res) => {
+
+//   // Products.find()
+//   const { q } = req.query;
+//   Products.find({
+//     $or: [
+//       { category: { $regex: new RegExp(q, "i") } },
+//       { title: { $regex: new RegExp(q, "i") } },
+//     ],
+//   })
+//     .then((data) => {
+//       res.status(200).json(data);
+//     })
+//     .catch((err) => {
+//       res.status(400).send({ error: err });
+//     });
+// };
 
 exports.getProductSearchAny = async (req, res) => {
   // Products.find()
@@ -176,62 +177,39 @@ exports.UpdateBookmark = (req, res) => {
   }
 };
 
-//GET THE the bookmark BY bookmark
-exports.getProductByBookmark = (req, res) => {
-  // Products.find({ bookmark: true })
-  //     .then((data) => res.status(201).json(data).send(" sucessfuly product fetched"))
-  //     .catch((err) => res.status(400).send(err => "not found" + err));;
+// //GET THE the user specific wishlist
+// exports.getProductByWishlist = async (req, res) => {
+//   //  const  data  = req.body;
+//   const userId = req.params.wishlist;
+//   const { q } = req.query;
 
-  const { q } = req.query;
+//   try {
+//     const user = await userModel.findById(userId);
 
-  Products.find({
-    $or: [
-      { category: { $regex: new RegExp(q, "i") } },
-      { title: { $regex: new RegExp(q, "i") } },
-    ],
-    bookmark: true,
-  })
-    .then((data) => {
-      res.status(200).json(data);
-    })
-    .catch((err) => {
-      res.status(400).send({ error: err });
-    });
-};
+//     if (!user) {
+//       return res.status(404).json({ message: "User not found" });
+//     }
+//     const wishlist = user.wishlist;
 
-//GET THE the user specific wishlist
-exports.getProductByWishlist = async (req, res) => {
-  //  const  data  = req.body;
-  const userId = req.params.wishlist;
-  const { q } = req.query;
+//     try {
+//       const matchingData = await productModel.find({
+//         _id: { $in: wishlist },
+//         $or: [
+//           { category: { $regex: new RegExp(q, "i") } },
+//           { title: { $regex: new RegExp(q, "i") } },
+//         ],
+//       });
 
-  try {
-    const user = await userModel.findById(userId);
-
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
-    const wishlist = user.wishlist;
-
-    try {
-      const matchingData = await productModel.find({
-        _id: { $in: wishlist },
-        $or: [
-          { category: { $regex: new RegExp(q, "i") } },
-          { title: { $regex: new RegExp(q, "i") } },
-        ],
-      });
-
-      res.status(200).json({ matchingData: matchingData });
-    } catch (error) {
-      console.error("Error finding matching data:", error);
-      res.status(500).json({ message: "Failed to find matching data" });
-    }
-  } catch (error) {
-    console.error("Error finding wishlist:", error);
-    return res.status(500).json({ message: "Failed to find wishlist" });
-  }
-};
+//       res.status(200).json({ matchingData: matchingData });
+//     } catch (error) {
+//       console.error("Error finding matching data:", error);
+//       res.status(500).json({ message: "Failed to find matching data" });
+//     }
+//   } catch (error) {
+//     console.error("Error finding wishlist:", error);
+//     return res.status(500).json({ message: "Failed to find wishlist" });
+//   }
+// };
 
 exports.createCategory = async (req, res) => {
   const NewCategory = req.body;

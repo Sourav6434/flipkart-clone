@@ -9,11 +9,18 @@ import { NavLink } from "react-router-dom";
 const WishList = () => {
   const [wishlistItem, setWishlistItem] = useState([]);
   const [userId, setUserId] = useState({});
+  let token;
 
   const fetchWishlistItem = async (userId) => {
     try {
+      const headers = {
+        // Define your headers here
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      };
       const response = await axios.get(
-        `http://localhost:4000/api/wishlist/${userId}`
+        `http://localhost:4000/api/wishlist/${userId}`,
+        { headers: headers }
       );
       setWishlistItem(response.data);
     } catch (err) {
@@ -45,7 +52,7 @@ const WishList = () => {
     toast.success(response.data.message, { autoClose: 900 });
   };
   useEffect(() => {
-    let token = localStorage.getItem("token");
+    token = localStorage.getItem("token");
     let decodedToken;
     if (token) {
       decodedToken = jwtDecode(token);
