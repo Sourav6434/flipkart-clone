@@ -26,6 +26,17 @@ const Signup = () => {
       .required(),
     gender: Joi.string().required(),
     password: Joi.string().min(4).required(),
+    phone: Joi.number()
+      .integer()
+      .min(1000000000)
+      .max(9999999999)
+      .required()
+      .messages({
+        "number.base": "Phone number must be a numeric value",
+        "number.min": "Phone number must be exactly 10 digits",
+        "number.max": "Phone number must be exactly 10 digits",
+        "any.required": "Phone number is required",
+      }),
     confirmpassword: Joi.string()
       .valid(Joi.ref("password"))
       .required()

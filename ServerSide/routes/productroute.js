@@ -3,7 +3,7 @@ const productRouter = express.Router();
 //import controller
 const productController = require("../controllers/productController");
 
-const { auth } = require("../middlewares/auth");
+const { authProtect } = require("../middlewares/auth");
 
 //define API routes
 productRouter.get("/category/all", productController.getAllCategory);
@@ -12,8 +12,12 @@ productRouter.get("/category/", productController.getProductByCategories);
 productRouter.get("/getProduct", productController.getProduct);
 productRouter.get("/search/any", productController.getProductSearchAny);
 productRouter.get("/id/:id", productController.getProductById);
-productRouter.get("/bookmark/:id", productController.getProductByBookmark);
-productRouter.get("/your/:wishlist", productController.getProductByWishlist);
+
+// productRouter.get(
+//   "/your/:wishlist",
+
+//   productController.getProductByWishlist
+// );
 productRouter.post("/createProduct", productController.createProduct);
 productRouter.post("/category/create", productController.createCategory);
 productRouter.post("/subcategory/create", productController.createSubCategory);
