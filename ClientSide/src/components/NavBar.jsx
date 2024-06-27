@@ -44,6 +44,7 @@ const Navbar = () => {
   }
 
   return (
+    <div className="nav">
     <div className="navbar">
       <div className="nav-1">
         <div className="logo">
@@ -164,6 +165,7 @@ const Navbar = () => {
           <i className="fa-solid fa-bars" title="more"></i>
         </div>
       </div>
+    </div>
     </div>
   );
 };

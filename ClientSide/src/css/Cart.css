@@ -1,8 +1,10 @@
 .cart {
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  margin-top: 5px;
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
+  min-height: 550px;
 }
 
 .empty-cart {
@@ -176,9 +178,9 @@
 }
 
 .cart-total-price {
-  position: sticky;
+  /* position: sticky;
   top: 75px;
-  right: 0;
+  right: 0; */
   width: 100%;
   height: auto;
   background-color: white;
@@ -187,9 +189,10 @@
 }
 .cart-address-order {
   gap: 10px;
-  position: sticky;
+  /* position: sticky;
   top: 370px;
-  right: 0;
+  right: 0; */
+  margin-top: 5%;
   width: auto;
   height: auto;
   background-color: white;

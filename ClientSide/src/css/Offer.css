@@ -3,9 +3,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 30px;
+    /* padding: 30px; */
+    padding-top: 0px 30px 30px 30px;
     position: relative;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    margin-top: 10px;
 }
 
 .offer-box {
