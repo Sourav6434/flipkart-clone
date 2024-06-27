@@ -22,7 +22,6 @@ const ProductDetails = () => {
   });
   const { id } = useParams();
   const [thumbImage, setThumbImage] = useState("");
-  const [response, setResponse] = useState();
   let token = localStorage.getItem("token");
   let decodedToken;
   if (token) {
@@ -43,28 +42,58 @@ const ProductDetails = () => {
   }, [id]);
 
   const handleOnClickAddToCart = async (productID) => {
-    console.log("userId ", decodedToken.id);
-    const response = await axios.post(
-      `http://localhost:4000/api/cart/${decodedToken.id}`,
-      {
-        cartItem: productID,
+    try {
+      if (!token) {
+        toast.info("Please Login to you account", {
+          toastId: "khandu",
+          autoClose: 1000,
+        });
+      } else {
+        console.log("userId ", decodedToken.id);
+        const response = await axios.post(
+          `http://localhost:4000/api/cart/${decodedToken.id}`,
+          {
+            cartItem: productID,
+          }
+        );
+        toast.success(response.data.message);
       }
-    );
-    setResponse(response);
-    toast.success(response.data.message);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleWishlist = async (productId) => {
     try {
-      const response = await axios.put(
-        `http://localhost:4000/api/wishlist/${decodedToken.id}`,
-        {
-          wishlistItem: productId,
-        }
-      );
-      toast.success(response.data.message);
+      if (!token) {
+        toast.info("Please Login to you account", {
+          toastId: "khandu",
+          autoClose: 1000,
+        });
+      } else {
+        const response = await axios.put(
+          `http://localhost:4000/api/wishlist/${decodedToken.id}`,
+          {
+            wishlistItem: productId,
+          }
+        );
+        toast.success(response.data.message);
+      }
     } catch (err) {
       console.error(err);
+    }
+  };
+  const handleOnBuyNow = async (productId) => {
+    try {
+      if (!token) {
+        toast.info("Please Login to you account", {
+          toastId: "khandu",
+          autoClose: 1000,
+        });
+      } else {
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -88,22 +117,19 @@ const ProductDetails = () => {
                 src={process.env.PUBLIC_URL + `${thumbImage}`}
                 alt="product Images"
               />
-              {decodedToken && decodedToken.name ? (
-                <i
-                  className="fas fa-thin fa-heart"
-                  title="Add to Wishlist"
-                  onClick={() => handleWishlist(productData._id)}
-                ></i>
-              ) : (
-                ""
-              )}
+
+              <i
+                className="fas fa-thin fa-heart"
+                title="Add to Wishlist"
+                onClick={() => handleWishlist(productData._id)}
+              ></i>
             </div>
           </div>
           <div className="product-button1">
             <button onClick={() => handleOnClickAddToCart(productData._id)}>
               Add to Cart
             </button>
-            <button>
+            <button onClick={() => handleOnBuyNow(productData._id)}>
               {" "}
               <i class="fa fa-bolt" />
               Buy Now

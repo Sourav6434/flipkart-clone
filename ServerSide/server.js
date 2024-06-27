@@ -1,4 +1,3 @@
-const nodemailer = require("nodemailer");
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -21,6 +20,7 @@ const cartRouter = require("./routes/cartRoute");
 const wishlistRouter = require("./routes/wishlistRoute");
 const orderRouter = require("./routes/orderRoute");
 const addressRouter = require("./routes/addressRoute");
+const mailSendRouter = require("./routes/mailSendRoute");
 
 //mount the product API routes
 app.use("/api/product", productRouter);
@@ -30,6 +30,7 @@ app.use("/api/cart", cartRouter);
 app.use("/api/wishlist", wishlistRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/address", addressRouter);
+app.use("/api/mail/send", mailSendRouter);
 
 //start server
 app.listen(PORT, () => {

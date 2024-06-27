@@ -50,26 +50,57 @@ const ProductList = () => {
   }, [category]);
 
   const handleOnClickAddToCart = async (productID) => {
-    const response = await axios.post(
-      `http://localhost:4000/api/cart/${decodedToken.id}`,
-      {
-        cartItem: productID,
+    try {
+      if (!token) {
+        toast.info("Please Login to you account", {
+          toastId: "khandu",
+          autoClose: 1000,
+        });
+      } else {
+        const response = await axios.post(
+          `http://localhost:4000/api/cart/${decodedToken.id}`,
+          {
+            cartItem: productID,
+          }
+        );
+        toast.success(response.data.message, { autoClose: 900 });
       }
-    );
-    toast.success(response.data.message, { autoClose: 900 });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleWishlist = async (productId) => {
     try {
-      const response = await axios.put(
-        `http://localhost:4000/api/wishlist/${decodedToken.id}`,
-        {
-          wishlistItem: productId,
-        }
-      );
-      toast.success(response.data.message);
+      if (!token) {
+        toast.info("Please Login to you account", {
+          toastId: "khandu",
+          autoClose: 1000,
+        });
+      } else {
+        const response = await axios.put(
+          `http://localhost:4000/api/wishlist/${decodedToken.id}`,
+          {
+            wishlistItem: productId,
+          }
+        );
+        toast.success(response.data.message);
+      }
     } catch (err) {
       console.error(err);
+    }
+  };
+  const handleOnBuyNow = async (productId) => {
+    try {
+      if (!token) {
+        toast.info("Please Login to you account", {
+          toastId: "khandu",
+          autoClose: 1000,
+        });
+      } else {
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -90,15 +121,12 @@ const ProductList = () => {
                     >
                       <img src={data.thumbnail} alt="Image 1" />
                     </NavLink>
-                    {decodedToken && decodedToken.name ? (
-                      <i
-                        className="fas fa-thin fa-heart"
-                        title="Add to Wishlist"
-                        onClick={() => handleWishlist(data._id)}
-                      ></i>
-                    ) : (
-                      ""
-                    )}
+
+                    <i
+                      className="fas fa-thin fa-heart"
+                      title="Add to Wishlist"
+                      onClick={() => handleWishlist(data._id)}
+                    ></i>
                   </div>
 
                   <div className="product-details">
@@ -146,7 +174,7 @@ const ProductList = () => {
                       <button onClick={() => handleOnClickAddToCart(data._id)}>
                         Add to Cart
                       </button>
-                      <button>
+                      <button onClick={() => handleOnBuyNow(data._id)}>
                         <i class="fa fa-bolt" />
                         Buy Now
                       </button>
