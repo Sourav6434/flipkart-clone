@@ -1,15 +1,15 @@
 //const HTML_TEMPLATE = require('./mail-template');
 // Import nodemailer library
 
-const dotenv = require('dotenv')
-dotenv.config()
+const dotenv = require("dotenv");
+dotenv.config();
 
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
 // Create transporter with Gmail SMTP configuration
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  host: 'smtp.gmail.com',
+  service: "gmail",
+  host: "smtp.gmail.com",
   port: 465,
   secure: true, // Use true for port 465, false for other ports
   auth: {
@@ -18,20 +18,21 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Define function to send email
-const sendEmail = async (req, res) => {
+//send mail for random passoword generator
+
+// Define function to send email for latest offer
+const sendLatestOffer = async (req, res) => {
   try {
     const { name, email, data } = req.body;
-
 
     // Mail options
     const mailOptions = {
       from: {
-        name: 'Flipkart Offers',
-        address: 'souravmallick6434@gmail.com'
+        name: "Flipkart Offers",
+        address: "souravmallick6434@gmail.com",
       },
       to: [email],
-      subject: 'Latest Offers for you',
+      subject: "Latest Offers for you",
       html: `
             <!DOCTYPE html>
             <html>
@@ -114,31 +115,21 @@ const sendEmail = async (req, res) => {
                 </div>
               </body>
             </html>
-          `
-
+          `,
     };
 
     // Send email
     await transporter.sendMail(mailOptions);
-    console.log('Email has been sent!');
+    console.log("Email has been sent!");
 
-    res.status(200).json({ message: 'Email sent successfully' });
+    res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: 'Failed to send email' });
+    res.status(500).json({ error: "Failed to send email" });
   }
 };
 
-
-
-
-
 // Export the function so it can be used in other files
 module.exports = {
-  sendEmail
+  sendLatestOffer,
 };
-
-
-
-
-

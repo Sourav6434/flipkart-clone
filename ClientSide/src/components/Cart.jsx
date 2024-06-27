@@ -5,11 +5,12 @@ import { UseSelector } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import ShippingAddress from "./ShippingAddress";
 import DeleteAlert from "./DeleteAlert";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const [cart, setCart] = useState([]);
   const [totprice, setTotPrice] = useState(null);
   const [totsavings, setTotSavings] = useState(null);
@@ -30,8 +31,16 @@ const Cart = () => {
   }
 
   useEffect(() => {
-    fetchAddresses(decodedToken.id);
-    fetchAllCart(decodedToken.id);
+    if (!token) {
+      toast.info("Please Login to you account", {
+        toastId: "khandu",
+        autoClose: 1000,
+      });
+      navigate("/login");
+    } else {
+      fetchAddresses(decodedToken.id);
+      fetchAllCart(decodedToken.id);
+    }
   }, []);
 
   const fetchAllCart = async (id) => {

@@ -89,7 +89,7 @@ const AddProduct = () => {
   // Fetch page details in edit mode
   useEffect(() => {
     if (!token) {
-      toast.info("To Add Products Please Login to you account", {
+      toast.info("Please Login to you account", {
         toastId: "khandu",
       });
       navigate("/login");
