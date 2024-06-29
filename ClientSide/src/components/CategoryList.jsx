@@ -16,7 +16,7 @@ const CategoryList = () => {
   };
   useEffect(() => {
     fetchAllCategory();
-  });
+  }, []);
   return (
     <div className="product-categories">
       {categories.map((data, index) => (

@@ -16,7 +16,7 @@ const CategoryListWithImage = () => {
   };
   useEffect(() => {
     fetchAllCategory();
-  });
+  }, []);
   return (
     <div className="categories">
       {categories.map((data, index) => (

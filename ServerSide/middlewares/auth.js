@@ -6,7 +6,6 @@ require("dotenv").config();
 exports.authProtect = async (req, res, next) => {
   try {
     //extract JWT token
-
     let token, decode;
     if (
       req.headers.authorization &&
