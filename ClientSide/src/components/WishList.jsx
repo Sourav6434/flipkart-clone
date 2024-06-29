@@ -9,9 +9,19 @@ import { NavLink } from "react-router-dom";
 const WishList = () => {
   const [wishlistItem, setWishlistItem] = useState([]);
   const [userId, setUserId] = useState({});
-  let token;
+  const [token, setToken] = useState({});
+  useEffect(() => {
+    let token = localStorage.getItem("token");
+    let decodedToken;
+    if (token) {
+      decodedToken = jwtDecode(token);
+    }
+    setToken(token);
+    setUserId(decodedToken.id);
+    fetchWishlistItem(decodedToken.id, token);
+  }, []);
 
-  const fetchWishlistItem = async (userId) => {
+  const fetchWishlistItem = async (userId, token) => {
     try {
       const headers = {
         // Define your headers here
@@ -22,12 +32,13 @@ const WishList = () => {
         `http://localhost:4000/api/wishlist/${userId}`,
         { headers: headers }
       );
+
       setWishlistItem(response.data);
     } catch (err) {
       console.log(err);
     }
   };
-  const handleWishlist = async (userId, productId) => {
+  const handleWishlist = async (userId, productId, token) => {
     try {
       const response = await axios.put(
         `http://localhost:4000/api/wishlist/${userId}`,
@@ -37,7 +48,7 @@ const WishList = () => {
         }
       );
       toast.success(response.data.message);
-      fetchWishlistItem(userId);
+      fetchWishlistItem(userId, token);
     } catch (err) {
       console.error(err);
     }
@@ -51,15 +62,6 @@ const WishList = () => {
     );
     toast.success(response.data.message, { autoClose: 900 });
   };
-  useEffect(() => {
-    token = localStorage.getItem("token");
-    let decodedToken;
-    if (token) {
-      decodedToken = jwtDecode(token);
-    }
-    setUserId(decodedToken.id);
-    fetchWishlistItem(decodedToken.id);
-  }, []);
 
   return (
     <div className="wishlist-root">
@@ -73,7 +75,7 @@ const WishList = () => {
                 <i
                   className="fas fa-thin fa-heart"
                   title="Add or Remove to Wishlist"
-                  onClick={() => handleWishlist(userId, data._id)}
+                  onClick={() => handleWishlist(userId, data._id, token)}
                 ></i>
               </div>
               <div className="wishlist-product-card-image">
