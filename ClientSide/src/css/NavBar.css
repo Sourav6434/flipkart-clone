@@ -1,6 +1,8 @@
 /* Navbar Css */
 .nav{
-   background-color: #9fb8da;
+   /* background-color: #9fb8da; */
+   background-color: #007bff;
+   box-shadow: 2px 3px 5px #0a080812;
    color: #fff;
    padding: 10px 20px;
    position: sticky;
@@ -17,44 +19,67 @@
   width: 100%;
   /* z-index: 1; */
   display: flex;
-  /* height: 38px; */
+  height: 38px;
 }
 .nav-1 {
-  width: 60%;
+  width: 12%;
   display: flex;
+  /* flex-direction: column; */
 }
 .nav-2 {
-  width: 40%;
+  /* width: 40%; */
+  width: 88%;
   display: flex;
 }
 
+.logo-text{
+  width: 80%;
+  margin: unset;
+  font-size: xx-large;
+  font-family: cursive;
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 1350px) {
+  .logo-text {
+    font-size:large;
+  }
+}
+
 .logo {
-  width: 18%;
-  margin-left: 20px;
+  width: 30%;
+  /* width: 18%; */
+  /* margin-left: 20px; */
 }
 .logo-image {
   width: 100%;
+  height: 100%;
   /* height: 114%; */
   /* height: 60%; */
 }
 .search-container1 {
-  width: 82%;
+  width: 100%;
 }
 .search-bar {
-  width: auto;
-  height: 96%;
+  /* width: auto;
+  height: 96%; */
+  width: 100%;
+  height: 100%;
 }
 .search-bar input {
-  margin-left: 85px;
+  /* margin-left: 85px;
   width: 87%;
-  height: 55%;
+  height: 55%; */
+  margin-left: 7%;
+  width: 90%;
+  height: 50%;
 }
 .search-bar input:focus {
   outline: none;
 }
 .search-result {
   /* display: none; */
-  margin-left: 88px;
+  /* margin-left: 88px;
   margin-top: 2px;
   position: absolute;
   color: #1b304f;
@@ -64,7 +89,18 @@
   z-index: 1;
   border-radius: 2px;
   box-sizing: border-box;
-  width: 40px;
+  width: 40px; */
+
+    margin-left: 4%;
+    margin-top: 0.1%;
+    position: absolute;
+    color: #1b304f;
+    background-color: #f9f9f9;
+    min-width: 45%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 2px;
+    box-sizing: border-box;
 }
 
 .search-result ul {
@@ -99,11 +135,11 @@
 }
 
 .nav-login {
-  width: 37%;
+  width: 40%;
 }
 
 .nav-icon {
-  width: 50%;
+  width: 40%;
   margin-top: 3px;
   display: flex;
   margin-top: 3px;
