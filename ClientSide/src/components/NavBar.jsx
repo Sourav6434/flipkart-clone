@@ -47,16 +47,20 @@ const Navbar = () => {
     <div className="nav">
     <div className="navbar">
       <div className="nav-1">
+        <p className="logo-text">Flipkart</p>
         <div className="logo">
           <NavLink to="/" className="logo-link">
             <img
-              src="/flipkart-logo.png"
+              src="/fklogo.png"
               alt="Flipkart"
               className="logo-image"
             />
           </NavLink>
         </div>
-        <div className="search-container1">
+      </div>
+
+      <div className="nav-2">
+      <div className="search-container1">
           <div className="search-bar">
             <input
               type="text"
@@ -88,9 +92,6 @@ const Navbar = () => {
               ))}
           </div>
         </div>
-      </div>
-
-      <div className="nav-2">
         <div className="nav-login">
           {token ? (
             <div className="dropdown-menus">

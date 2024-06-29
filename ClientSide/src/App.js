@@ -22,6 +22,7 @@ import MyOrders from "./components/MyOrders";
 import PageNotFound from "./components/PageNotFound";
 import WishList from "./components/WishList";
 import Order from "./components/Order";
+import OrderPlaced from "./components/OrderPlaced";
 
 
 function App() {
@@ -46,8 +47,9 @@ function App() {
           <Route path="/addProduct/feature" element={<ProductFeature />} />
           <Route path="/spinner" element={<Spinner />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/orders" element={<MyOrders />} />
           <Route path="/order" element={<Order/>} />
+          <Route path="/order/placed" element={<OrderPlaced/>} />
+          <Route path="/orders" element={<MyOrders />} />
           <Route path="/wishlist" element={<WishList />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
