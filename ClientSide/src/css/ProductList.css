@@ -183,7 +183,7 @@
   display: flex;
 }
 .product-price-action button {
-  background: #88c5df;
+  background: #007bff;
   margin: 7px 7px 0px 0px;
   height: min-content;
 }
@@ -193,5 +193,5 @@
   font-weight: 600;
   background: white;
   color: black;
-  border: 1px solid #27b3c2;
+  border: 1px solid #007bff;
 }

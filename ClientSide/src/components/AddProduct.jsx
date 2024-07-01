@@ -114,8 +114,15 @@ const AddProduct = () => {
   }, [baseUrl, id, navigate, token]);
 
   const addProduct = async () => {
+    const headers = {
+      // Define your headers here
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    };
     await axios
-      .post("http://localhost:4000/api/product/createProduct", product)
+      .post("http://localhost:4000/api/product/createProduct", product, {
+        headers: headers,
+      })
       .then((product) => {
         toast.success("Product created successfully");
         navigate("/");

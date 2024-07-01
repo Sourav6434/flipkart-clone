@@ -25,7 +25,6 @@ exports.authProtect = async (req, res, next) => {
     try {
       //verify function will give the data pass in token by verifying with the secret code
       decode = jwt.verify(token, process.env.JWT_SECRET);
-      //   req.body = decode;
     } catch (err) {
       return res.status(401).json({
         success: false,
@@ -45,6 +44,8 @@ exports.authProtect = async (req, res, next) => {
 
     //Check if user changed after the JWT was issued  //future improvement
 
+    //Grant Access to protected route
+    req.user = freshUser;
     next();
   } catch (error) {
     return res.status(401).json({
@@ -52,4 +53,18 @@ exports.authProtect = async (req, res, next) => {
       message: "Something went wrong while verifying the token",
     });
   }
+};
+
+exports.restrictTo = (...roles) => {
+  return (req, res, next) => {
+    //for restrict
+    if (!roles.includes(req.user.role)) {
+      return res.status(403).json({
+        success: false,
+        message: "You do not have permission to perform this action",
+      });
+    }
+    //if pass restriction
+    next();
+  };
 };

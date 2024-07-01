@@ -84,7 +84,7 @@
   flex-direction: column;
 }
 .wishlist-product-card-button button:nth-child(1) {
-  background: #88c5df;
+  background: #007bff;
   margin: 7px 0px 0px 0px;
   height: min-content;
 }
@@ -94,5 +94,5 @@
   background: white;
   color: black;
   margin: 7px 0px 7px 0px;
-  border: 1px solid #27b3c2;
+  border: 1px solid #007bff;
 }
