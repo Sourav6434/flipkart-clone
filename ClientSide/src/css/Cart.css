@@ -62,7 +62,7 @@
 }
 .cart-card-price {
   padding-left: 10px;
-  
+
   width: 40%;
   height: 100%;
 }
@@ -131,7 +131,7 @@
 .cart-card-count button {
   width: 27%;
   border-radius: 19px;
-  background: #88c5df;
+  background: #007bff;
   margin: 5px;
 }
 .cart-card-count input {
@@ -148,7 +148,7 @@
   margin-left: 45px;
 }
 .cart-card-button button {
-  background: #88c5df;
+  background: #007bff;
   margin: 7px;
   height: min-content;
 }
@@ -158,7 +158,7 @@
   background: white;
   color: black;
   margin-left: 135px;
-  border: 1px solid #27b3c2;
+  border: 1px solid #007bff;
 }
 
 .cart-total {

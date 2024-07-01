@@ -176,7 +176,7 @@
   height: 35px;
 }
 .m-profile-view-name div:nth-child(2) button {
-  background-color: #759ed7b8;
+  background-color: #007bff;
 }
 .m-profile-view-name div:nth-child(2) button:hover {
   background-color: #88c5df;

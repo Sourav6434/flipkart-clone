@@ -36,18 +36,6 @@ exports.createProduct = async (req, res) => {
     res.status(400).send("Product not created");
   }
 };
-//get all the product
-// exports.getProduct = async (req, res) => {
-//     // Products.find()
-//     const { q } = req.query;
-//     Products.fuzzySearch(q)
-//         .then((data) => {
-//             res.status(200).json(data);
-//         })
-//         .catch((err) => {
-//             res.status(400).send({ error: err })
-//         })
-// }
 
 //Update the product by id
 exports.updateProductById = async (req, res) => {
@@ -57,24 +45,6 @@ exports.updateProductById = async (req, res) => {
     .then((data) => res.status(204).send(data))
     .catch((err) => res.status(404).send((err) => "Item not found" + err));
 };
-
-// exports.getProduct = async (req, res) => {
-
-//   // Products.find()
-//   const { q } = req.query;
-//   Products.find({
-//     $or: [
-//       { category: { $regex: new RegExp(q, "i") } },
-//       { title: { $regex: new RegExp(q, "i") } },
-//     ],
-//   })
-//     .then((data) => {
-//       res.status(200).json(data);
-//     })
-//     .catch((err) => {
-//       res.status(400).send({ error: err });
-//     });
-// };
 
 exports.getProductSearchAny = async (req, res) => {
   // Products.find()

@@ -49,6 +49,7 @@ exports.updateWishlist = async (req, res) => {
 //Get all bookmarks by userID
 exports.getwishlistItems = async (req, res) => {
   const userId = req.params.userId;
+
   try {
     let isUserExist = await userModel.findOne({ _id: userId });
     if (!isUserExist) {
